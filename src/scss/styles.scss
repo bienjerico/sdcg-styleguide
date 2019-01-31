@@ -1,14 +1,14 @@
 /*!
-  * Bien Modification
+  * Web Developer Custom Style
   */
 
-$bg-color: lightgray; 
-$bg-pink: pink; 
+$bg-color: #FDFCFC; 
 
 body {
     background: $bg-color;
-        .navbar-sample{
-            
-        }
+    
+    .nav-link[data-toggle]:not(.collapsed):after {
+      content: "▴";
+    }
 }
 

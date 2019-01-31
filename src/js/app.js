@@ -54861,23 +54861,51 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 
 })(window, window.angular);
-;var HomeApp = angular.module('HomeApp', ['ngRoute',
-]); 
+;var HomeApp = angular.module('HomeApp', ['ngRoute']); 
 
 HomeApp.config(['$routeProvider', 
 function ($routeProvider) {
     $routeProvider
     .when('/Registration', { templateUrl: '../Pages/Registration/Registration.html' })
     .when('/Login', { templateUrl: '../Pages/Login/Login.html' })
+    .when('/Frontend', { templateUrl: '../Pages/Frontend/Frontend.html' })
+    .when('/CSharp', { templateUrl: '../Pages/CSharp/CSharp.html' })
+    .when('/Database', { templateUrl: '../Pages/Database/Database.html' })
+    .when('/Implementation/:id?', { templateUrl: '../Pages/Implementation/Implementation.html' })
     ;
 }]).
 run(["$rootScope", function ($rootScope) {
 
     
-}]);;angular.module('HomeApp').controller('logincontroller',
+}]);;angular.module('HomeApp').controller('csharpcontroller',
+    ["$scope", function ($scope) {
+        $scope.init = function () {
+            $scope.title = "CSHARP";
+        }
+    }]);
+;angular.module('HomeApp').controller('frontendcontroller',
+    ["$scope", function ($scope) {
+        $scope.init = function () {
+            $scope.title = "FRONTEND";
+        }
+    }]);
+;angular.module('HomeApp').controller('databasecontroller',
+    ["$scope", function ($scope) {
+        $scope.init = function () {
+            $scope.title = "DATABASE";
+        }
+    }]);
+;angular.module('HomeApp').controller('logincontroller',
     ["$scope", function ($scope) {
         $scope.init = function () {
             $scope.title = "LOGIN PAGE";
+        }
+    }]);
+;angular.module('HomeApp').controller('implementationcontroller',
+    ["$scope", "$location", function ($scope,$location) {
+        $scope.init = function () {
+            $scope.title = "IMPLEMENTATION";
+            console.log($location.path());
         }
     }]);
 ;angular.module('HomeApp').controller('registrationcontroller',
@@ -54886,14 +54914,4 @@ run(["$rootScope", function ($rootScope) {
             $scope.title = "REGISTRATION PAGE";
         }
     }]);
-;console.log("custom javascript is working");
-
-$(".tab-list").on("click", ".tab", function(e) {
-    e.preventDefault();
-    
-$(".tab").removeClass("active");
-    $(".tab-content").removeClass("show");
-    $(this).addClass("active");
-    $($(this).attr('href')).addClass("show");	
-});
-
+;console.log("javascript is working...");

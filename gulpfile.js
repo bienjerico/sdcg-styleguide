@@ -10,6 +10,7 @@ var gulp = require("gulp"),
     ngAnnotate = require('gulp-ng-annotate'),
     plumber = require('gulp-plumber'),
     bytediff = require('gulp-bytediff'),
+    del = require('del'),
     browserSync = require("browser-sync").create();
 
 // Put this after including our dependencies
@@ -95,6 +96,12 @@ function script(){
     )
 }
 
+
+function clean(){
+    return(
+        del(['src/js/app.min.js','src/js/app.js'])
+    )
+}
 function scriptMin(){
     return (
         gulp
@@ -159,3 +166,4 @@ function reload() {
  
 // Don't forget to expose the task!
 exports.watch = watch
+exports.clean = clean
