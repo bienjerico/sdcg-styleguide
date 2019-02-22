@@ -138,7 +138,7 @@ function watch(){
     browserSync.init({
         // You can tell browserSync to use this directory and serve it as a mini-server
         server: {
-            baseDir: "D:/Bootstrap-4/sdcg-styleguide/src/"
+            baseDir: "D:/Web/Bootstrap-4/sdcg-styleguide/src/"
         }
         // If you are already serving your website locally using something like apache
         // You can use the proxy setting to proxy that instead
